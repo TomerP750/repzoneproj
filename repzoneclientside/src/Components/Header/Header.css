@@ -1,0 +1,45 @@
+.Header {
+	display: flex;
+	justify-content: center;
+}
+
+.free-shipping {
+	background-color: red;
+	width: 100%;
+	text-align: center;
+}
+
+.header-content {
+	display: flex;
+	background-image: url("../../assets/Header-Image.png");
+	justify-content: space-between;  /* Space between logo and icons */
+	align-items: flex-start;         /* Align everything at the top */
+	padding: 20px;                   /* Adjust padding as necessary */
+	background-color: #333;          /* Background color */
+	color: white;                    /* Text color */
+	height: 300px; /* Set header height to 300px */
+}
+
+/* Left Section with Logo */
+.logo-and-categories {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+/* Logo Styling */
+.Logo {
+	font-size: 3rem;
+	font-weight: bold;
+	margin: 0;
+	color: white;
+	text-decoration: none;
+}
+
+/* Icons Section */
+.icons {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-end;
+	gap: 20px;
+}
