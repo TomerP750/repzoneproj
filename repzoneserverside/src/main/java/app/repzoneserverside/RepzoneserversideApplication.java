@@ -15,7 +15,7 @@ public class RepzoneserversideApplication {
 
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(RepzoneserversideApplication.class, args);
-
+        System.out.println("Server is Running!");
     }
 
 }
