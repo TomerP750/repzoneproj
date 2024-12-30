@@ -1,9 +1,11 @@
 package app.repzoneserverside.Services;
 
+import app.repzoneserverside.Beans.Review;
 import app.repzoneserverside.Beans.User;
 import app.repzoneserverside.Exceptions.ExistsException;
 import app.repzoneserverside.Exceptions.InvalidInputException;
 import app.repzoneserverside.Repositories.OrderRepository;
+import app.repzoneserverside.Repositories.ReviewRepository;
 import app.repzoneserverside.Repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -11,14 +13,14 @@ import org.springframework.stereotype.Service;
 public class UserService {
     // Handles user management (authentication, registration, profile management).
     private final UserRepository userRepository;
-    private CartRepository cartRepository;
     private OrderRepository orderRepository;
+    private ReviewRepository reviewRepository;
     private int userId;
 
-    public UserService(UserRepository userRepository, CartRepository cartRepository, OrderRepository orderRepository) {
+    public UserService(UserRepository userRepository, OrderRepository orderRepository, ReviewRepository reviewRepository) {
         this.userRepository = userRepository;
-        this.cartRepository = cartRepository;
         this.orderRepository = orderRepository;
+        this.reviewRepository = reviewRepository;
     }
 
     public boolean login(String email, String password) {
@@ -60,7 +62,6 @@ public class UserService {
 
     public void deleteAccount() throws ExistsException {
         User user = userRepository.findById(userId).orElseThrow(()->new ExistsException("User not found"));
-        cartRepository.deleteByUserId(userId);
         orderRepository.deleteByUserId(userId);
         userRepository.delete(user);
     }
@@ -90,6 +91,18 @@ public class UserService {
 
     public User accountDetails() throws ExistsException {
         return userRepository.findById(userId).orElseThrow(()->new ExistsException("User Not Found"));
+    }
+
+    public void addReview(Review review) throws InvalidInputException {
+        if (review.getRating() > 0 && review.getRating() < 5) {
+            reviewRepository.save(review);
+        } else {
+            throw new InvalidInputException("Invalid Rating");
+        }
+    }
+
+    public void deleteReview(int id) {
+        reviewRepository.deleteById(id);
     }
 
 

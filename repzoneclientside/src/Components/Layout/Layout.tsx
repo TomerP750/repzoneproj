@@ -12,7 +12,9 @@ export function Layout(): JSX.Element {
     return (
         <div className="Layout">
             { showHeader && <Header/>}
+            <div className={"main"}>
             <Routing/>
+            </div>
             <Footer/>
         </div>
     );
