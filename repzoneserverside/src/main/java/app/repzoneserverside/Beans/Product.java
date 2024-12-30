@@ -17,7 +17,5 @@ public class Product {
     private String image;
     @Enumerated(EnumType.STRING)
     private Category category;
-    @ManyToMany
-    private List<CartItem> cartItems;
 
 }

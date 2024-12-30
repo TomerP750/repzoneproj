@@ -20,8 +20,6 @@ public class User {
     private String lastName;
     private String address;
     private String phoneNumber;
-    @OneToOne(mappedBy = "user")
-    private Cart cart;
     @OneToMany
     private List<Order> orders;
 
@@ -62,5 +60,9 @@ public class User {
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
     }
 }

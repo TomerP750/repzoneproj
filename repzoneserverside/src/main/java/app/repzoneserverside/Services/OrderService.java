@@ -1,6 +1,5 @@
 package app.repzoneserverside.Services;
 
-import app.repzoneserverside.Beans.CartItem;
 import app.repzoneserverside.Beans.Order;
 import app.repzoneserverside.Exceptions.ExistsException;
 import app.repzoneserverside.Repositories.OrderRepository;

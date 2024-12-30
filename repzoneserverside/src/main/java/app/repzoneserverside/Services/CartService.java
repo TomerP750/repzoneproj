@@ -1,12 +1,8 @@
 package app.repzoneserverside.Services;
 
-import app.repzoneserverside.Beans.Cart;
-import app.repzoneserverside.Beans.CartItem;
 import app.repzoneserverside.Beans.Product;
 import app.repzoneserverside.Exceptions.ExistsException;
 import app.repzoneserverside.Exceptions.ProductNotAvailableException;
-import app.repzoneserverside.Repositories.CartItemRepository;
-import app.repzoneserverside.Repositories.CartRepository;
 import org.springframework.stereotype.Service;
 
 @Service

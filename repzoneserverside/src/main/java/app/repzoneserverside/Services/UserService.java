@@ -3,7 +3,6 @@ package app.repzoneserverside.Services;
 import app.repzoneserverside.Beans.User;
 import app.repzoneserverside.Exceptions.ExistsException;
 import app.repzoneserverside.Exceptions.InvalidInputException;
-import app.repzoneserverside.Repositories.CartRepository;
 import app.repzoneserverside.Repositories.OrderRepository;
 import app.repzoneserverside.Repositories.UserRepository;
 import org.springframework.stereotype.Service;

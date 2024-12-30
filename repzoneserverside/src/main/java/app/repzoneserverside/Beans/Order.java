@@ -10,6 +10,7 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @ManyToOne
     private User user;
     private Status status;
     private int totalPrice;
