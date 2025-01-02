@@ -17,6 +17,8 @@ public class Product {
     private String image;
     @Enumerated(EnumType.STRING)
     private Category category;
+    @OneToMany
+    List<Review> reviews;
 
 
     public Product() {

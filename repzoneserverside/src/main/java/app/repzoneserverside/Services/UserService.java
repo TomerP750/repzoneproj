@@ -15,7 +15,7 @@ public class UserService {
     private final UserRepository userRepository;
     private OrderRepository orderRepository;
     private ReviewRepository reviewRepository;
-    private int userId;
+//    private int userId;
 
     public UserService(UserRepository userRepository, OrderRepository orderRepository, ReviewRepository reviewRepository) {
         this.userRepository = userRepository;
@@ -25,7 +25,7 @@ public class UserService {
 
     public boolean login(String email, String password) {
         if (userRepository.existsByEmailAndPassword(email, password)) {
-            userId = userRepository.getIdByEmailAndPassword(email, password);
+//            userId = userRepository.getIdByEmailAndPassword(email, password);
             return true;
         }
         return false;
